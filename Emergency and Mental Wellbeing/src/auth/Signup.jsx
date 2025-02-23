@@ -1,4 +1,4 @@
- import { useActionState, useState } from "react";
+ import {  useState } from "react";
  import { useForm } from "react-hook-form";
  import { signupService } from "../services/authServices";
  import { useNavigate } from "react-router-dom";
@@ -23,7 +23,7 @@
     };
   
     return (
-      <div className="max-w-md mx-auto p-6 bg-white rounded-2xl shadow-lg mt-8">
+      <div className="max-w-md mx-auto p-6 bg-transparent rounded-2xl text-white shadow-lg mt-8">
         <h2 className="text-2xl font-bold mb-4 text-center">Sign Up</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
@@ -31,7 +31,7 @@
             <input
               type="text"
               {...register("name", { required: "Name is required" })}
-              className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full p-2 border text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
           </div>
@@ -41,7 +41,7 @@
             <input
               type="email"
               {...register("email", { required: "Email is required" })}
-              className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full p-2 border text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
           </div>

@@ -25,3 +25,16 @@ export const loginService = async(userData)=>{
   const data = await  response.json();
   return data ;
   }
+// update password api 
+export const changePassword = async(userData)=>{
+    const   { email, password, confirmPassword} = userData ;
+    const response = await fetch(`${url}/password`,{
+      method: "PATCH",
+      headers:{
+          "content-type":"application/json"
+      },
+      body:JSON.stringify({ email, password, confirmPassword})
+  });
+  const data = await  response.json();
+  return data ;
+  }

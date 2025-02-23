@@ -4,8 +4,9 @@ import Login from './auth/Login';
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import Footer from './components/Footer';
+
 import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
+import ForgotPassword from './auth/ForgotPassword';
 
 function App() {
   return (
@@ -18,22 +19,27 @@ function App() {
           <Route index element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
-         
+          <Route path='ForgotPassword' element={<ForgotPassword/>}/>
           <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
 
-      <Footer />
+     
     </>
   );
 }
 
 const Layout = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
-      <Outlet />
+    <div 
+        className="min-h-screen flex  flex-col items-center justify-center bg-cover bg-center "
+        style={{ 
+            backgroundImage: "url('https://motionarray.imgix.net/preview-266062-WgSdDk40Wu-high_0000.jpg?w=660&q=60&fit=max&auto=format')",
+            backgroundAttachment: "fixed" // Optional: makes background fixed while scrolling
+        }}>
+        <Outlet />
     </div>
-  );
+);
 };
 
 export default App;
