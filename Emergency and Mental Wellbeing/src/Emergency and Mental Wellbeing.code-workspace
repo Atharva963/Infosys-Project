@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../backend infy"
+		},
+		{
+			"path": "../../auth-backend"
+		}
+	],
+	"settings": {}
+}
